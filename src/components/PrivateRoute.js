@@ -10,6 +10,11 @@ import Vendors from './Vendors';
 import Tests from './Tests';
 import Reports from './Reports';
 import Users from './Users';
+import Testing from './Testing';
+import Ny from './Ny';
+import Fl from './Fl';
+import Logs from './Logs';
+import Po from './Po';
 
 
 
@@ -26,7 +31,14 @@ export class PrivateRoute extends Component {
                 <Navigation />
                 <Switch>
                     <Route exact path="/account/in-use" component={Main} />
+                    <Route exact path="/account/lab" component={Testing} />
+                    <Route exact path="/account/inventory-ny" component={Ny} />
+                    <Route exact path="/account/inventory-fl" component={Fl} />
+                    <Route exact path="/account/logs" component={Logs} />
+                    
                     <Route exact path="/account/order" component={Order} />
+                    <Route exact path="/account/manager" component={Po} />
+
                     <Route exact path="/account/items" component={Items} />
                     <Route exact path="/account/vendors" component={Vendors} />
                     <Route exact path="/account/tests" component={Tests} />

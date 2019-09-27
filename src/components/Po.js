@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import NewDropDown from './NewDropDown';
-import OrderList from './OrderList';
+import PoList from './PoList';
 
 
 
@@ -15,7 +15,7 @@ export class Order extends Component {
     render() {
         return (
             <div className="main-sde">
-                <h2>Order Manager</h2>
+                <h2>PO Manager</h2>
                 <div className="flex mafgji">
                     <div className="flex al-cntr bas25">
                         <div className="derty">Create PO#</div>
@@ -35,10 +35,11 @@ export class Order extends Component {
                         <div className="all pre-order manbgg">Pre-Order</div>
                         <div className="all pen-del manbgg">Pending Delivery</div>
                         <div className="all pen-tes manbgg">Pending Lot Testing</div>
-                        <div className="all in-use">In Use</div>
+                        <div className="all in-use manbgg">In Use</div>
+                        <div className="derty">In Use</div>
                     </div>
                 </div>
-                <OrderList />
+                <PoList />
             </div>
         )
     }

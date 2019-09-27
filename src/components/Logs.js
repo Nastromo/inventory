@@ -6,31 +6,26 @@ import '../table.css';
 
 
 
-export class GroupList extends Component {
+export class Testing extends Component {
 
     initColumns = () => {
         return [
             {
-                Header: 'Ref#',
-                accessor: 'ref',
+                Header: 'Scan Date',
+                accessor: 'scanDate',
             },
             {
-                Header: 'Company',
-                accessor: 'company',
+                Header: 'Barcode',
+                accessor: 'barcode',
             },
             {
-                Header: 'Title',
-                accessor: 'title',
-                width: 500
+                Header: 'Item',
+                accessor: 'item',
             },
             {
-                Header: '# In Use',
-                accessor: 'inUse',
+                Header: 'Order',
+                accessor: 'order',
             },
-            {
-                Header: '# Of Lots',
-                accessor: 'ofLots',
-            }
         ];
     }
 
@@ -56,7 +51,7 @@ export class GroupList extends Component {
     renderList = (list, text) => {
         return (
             <div className="content-table small-t basis50">
-            <h2>In Use</h2>
+            <h2>Logs</h2>
                 <ReactTable
                     data={list}
                     getTdProps={this.handleRowClick}
@@ -86,4 +81,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroupList)
+export default connect(mapStateToProps, mapDispatchToProps)(Testing)

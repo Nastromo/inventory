@@ -1906,3 +1906,75 @@ p.logo-text:hover {
 .drop-sub-menu2:hover {
     display: flex; 
 }
+
+.main-sde {
+    margin: 15px;
+    padding: 15px;
+    background: #fff;
+    border: 1px solid #dadada;
+}
+
+.derty {
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin: 0 8px 0 0;
+}
+
+.mafgji {
+    margin: 10px 0;
+    justify-content: space-between;
+}
+
+.manbgg {
+    margin: 0 10px 0 0;
+}
+
+.derty {
+    height: 30px;
+    padding: 0 15px;
+    background: #15ac8e;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.bas25 {
+    flex-basis: 25%;
+}
+
+.bas48 {
+    flex-basis: 48%;
+}
+
+.all {
+    height: 30px;
+    padding: 0 12px;
+    background: #23c6c8;
+    border-radius: 3px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.pre-order {
+    background: #ed5565;
+}
+
+.pen-del {
+    background: #f8ac59;
+}
+
+.pen-tes {
+    background: #1c84c6;
+}
+
+.in-use {
+    background: #d1dade;
+}

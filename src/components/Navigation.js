@@ -70,8 +70,8 @@ export class Navigation extends Component {
                         <div className="drop-sub-menu">
                             <Link to="/account/in-use">In-use</Link>
                             <Link to="/account/lab">Lot testing</Link>
-                            <Link to="/account/ny">IT New York</Link>
-                            <Link to="/account/fl">IT Florida</Link>
+                            <Link to="/account/inventory-ny">IT New York</Link>
+                            <Link to="/account/inventory-fl">IT Florida</Link>
                             <Link to="/account/logs">Logs</Link>
                         </div>
                         <Link
@@ -81,7 +81,7 @@ export class Navigation extends Component {
                             to="/account/order">Order Desck</Link>
                         <div className="drop-sub-menu2">
                             <Link to="/account/order">Order Manager</Link>
-                            <Link to="/account/po">PO Manager</Link>
+                            <Link to="/account/manager">PO Manager</Link>
                         </div>
                         <Link
                             id="option3"
