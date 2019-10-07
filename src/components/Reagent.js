@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import TestList from './TestList';
 import NewDropDown from './NewDropDown';
+import ReagentList from './ReagentList';
 
 
-export class Tests extends Component {
+export class Reagent extends Component {
     constructor(props) {
         super(props);
         this.deps = [`All Departments`, `Chemistry`, `Cytology`, `Hematology`, `Histology`, `Immunology`, `Mass Spec`, `Microbiology`, `Molecular`, `Order Desk`, `Warehouse`, `IT [New York]`, `IT [Florida]`, `Administration`, `R&D`]
@@ -13,10 +13,9 @@ export class Tests extends Component {
     render() {
         return (
             <div className="main-sde">
-                <h2>Tests</h2>
-                <p className="desdf">Worksheets</p>
+                <h2>Reagent Usage Report</h2>
                 <div className="flex mafgji">
-                    <div className="flex al-cntr bas25">
+                    <div className="flex al-cntr bas48">
                         <div className="bas48 mar0g-rty">
                             <NewDropDown
                                 id="deps"
@@ -26,11 +25,15 @@ export class Tests extends Component {
                                 menu={this.deps}
                                 option={this.props.optionDep} />
                         </div>
-                        <div className="derty">Add Test</div>
+                        <input type="text" className="simple-input-n" placeholder="mm/dd/yyyy"/>
+                        <input type="text" className="simple-input-n" placeholder="mm/dd/yyyy"/>
+
                     </div>
-                    
+                    <div className="flex al-cntr">
+                        <div className="derty">Download</div>
+                    </div>
                 </div>
-                <TestList />
+                <ReagentList />
             </div>
         )
     }
@@ -44,4 +47,4 @@ const mapDispatchToProps = {
     
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Tests)
+export default connect(mapStateToProps, mapDispatchToProps)(Reagent)

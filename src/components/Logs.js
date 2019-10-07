@@ -50,17 +50,19 @@ export class Testing extends Component {
 
     renderList = (list, text) => {
         return (
-            <div className="content-table small-t basis50">
-            <h2>Logs</h2>
-                <ReactTable
-                    data={list}
-                    getTdProps={this.handleRowClick}
-                    columns={this.initColumns()}
-                    resizable={false}
-                    filterable={true}
-                    defaultPageSize={17}
-                    noDataText={text}
-                />
+            <div className="main-sde">
+                <div className="content-table small-t basis50">
+                    <h2>Logs</h2>
+                    <ReactTable
+                        data={list}
+                        getTdProps={this.handleRowClick}
+                        columns={this.initColumns()}
+                        resizable={false}
+                        filterable={true}
+                        defaultPageSize={17}
+                        noDataText={text}
+                    />
+                </div>
             </div>
         )
     }

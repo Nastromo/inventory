@@ -102,7 +102,12 @@ export class Navigation extends Component {
                             id="option6"
                             onClick={this.handleClick}
                             innerRef={el => this.reports = el}
-                            to="/account/reports">Reports</Link>
+                            to="/account/purchase">Reports</Link>
+                        <div className="drop-sub-menu3">
+                            <Link to="/account/purchase">Purchase Order</Link>
+                            <Link to="/account/reagent">Reagent Usage</Link>
+                            <Link to="/account/test-logs">Test Logs</Link>
+                        </div>
                         <Link
                             id="option7"
                             onClick={this.handleClick}

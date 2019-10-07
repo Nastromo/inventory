@@ -6,30 +6,21 @@ import '../table.css';
 
 
 
-export class GroupList extends Component {
+export class Testing extends Component {
 
     initColumns = () => {
         return [
             {
-                Header: 'Ref#',
-                accessor: 'ref',
+                Header: 'Worksheet',
+                accessor: 'worksheet',
             },
             {
-                Header: 'Company',
-                accessor: 'company',
+                Header: 'Name',
+                accessor: 'name',
             },
             {
-                Header: 'Title',
-                accessor: 'title',
-                width: 500
-            },
-            {
-                Header: '# In Use',
-                accessor: 'inUse',
-            },
-            {
-                Header: '# Of Lots',
-                accessor: 'ofLots',
+                Header: 'Code',
+                accessor: 'code',
             }
         ];
     }
@@ -55,21 +46,17 @@ export class GroupList extends Component {
 
     renderList = (list, text) => {
         return (
-            <div className="main-sde">
-                <div className="content-table small-t basis50">
-                    <h2>In Use</h2>
-                    <ReactTable
-                        data={list}
-                        getTdProps={this.handleRowClick}
-                        columns={this.initColumns()}
-                        resizable={false}
-                        filterable={true}
-                        defaultPageSize={17}
-                        noDataText={text}
-                    />
-                </div>
+            <div className="content-table small-t basis50">
+                <ReactTable
+                    data={list}
+                    getTdProps={this.handleRowClick}
+                    columns={this.initColumns()}
+                    resizable={false}
+                    filterable={true}
+                    defaultPageSize={17}
+                    noDataText={text}
+                />
             </div>
-
         )
     }
 
@@ -89,4 +76,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroupList)
+export default connect(mapStateToProps, mapDispatchToProps)(Testing)

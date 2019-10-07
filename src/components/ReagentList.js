@@ -11,34 +11,57 @@ export class Testing extends Component {
     initColumns = () => {
         return [
             {
-                Header: 'Rec Date',
-                accessor: 'recDate',
+                Header: 'Item #',
+                accessor: 'item',
+            },
+            {
+                Header: 'Company name',
+                accessor: 'compName',
+            },
+            {
+                Header: 'Reagent Name',
+                accessor: 'reaName',
+            },
+            {
+                Header: 'Units',
+                accessor: 'units',
             },
             {
                 Header: 'Lot #',
                 accessor: 'lot',
             },
             {
+                Header: 'Order Date',
+                accessor: 'orderDate',
+            },
+            {
+                Header: 'Rec Date',
+                accessor: 'recDate',
+            },
+            {
                 Header: 'Exp Date',
-                accessor: 'extDate',
+                accessor: 'expDate',
             },
             {
-                Header: 'Ref #',
-                accessor: 'ref',
+                Header: 'Test Date',
+                accessor: 'testDate',
             },
             {
-                Header: 'Company',
-                accessor: 'company',
+                Header: 'Test Result',
+                accessor: 'testResult',
             },
             {
-                Header: 'Title',
-                accessor: 'title',
-                width: 500
+                Header: 'In Service Date',
+                accessor: 'serviceDate',
             },
             {
-                Header: 'Quantity',
-                accessor: 'qty',
+                Header: 'Order Qty',
+                accessor: 'orderQty',
             },
+            {
+                Header: 'Qty',
+                accessor: 'Qty',
+            }
         ];
     }
 
@@ -63,21 +86,17 @@ export class Testing extends Component {
 
     renderList = (list, text) => {
         return (
-            <div className="main-sde">
-                <div className="content-table small-t basis50">
-                    <h2>Lot Testing</h2>
-                    <ReactTable
-                        data={list}
-                        getTdProps={this.handleRowClick}
-                        columns={this.initColumns()}
-                        resizable={false}
-                        filterable={true}
-                        defaultPageSize={17}
-                        noDataText={text}
-                    />
-                </div>
+            <div className="content-table small-t basis50">
+                <ReactTable
+                    data={list}
+                    getTdProps={this.handleRowClick}
+                    columns={this.initColumns()}
+                    resizable={false}
+                    filterable={true}
+                    defaultPageSize={17}
+                    noDataText={text}
+                />
             </div>
-
         )
     }
 

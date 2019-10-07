@@ -920,6 +920,14 @@ p.logo-text:hover {
     padding: 0 15px 0;
 }
 
+.simple-input-n {
+    height: 30px;
+    width: 100%;
+    border-radius: 4px;
+    border: 1px solid #dadada;
+    padding: 0 15px 0;
+}
+
 .gross-other {
     height: 100px;
     box-sizing: border-box;
@@ -1891,6 +1899,17 @@ p.logo-text:hover {
     box-shadow: 0 2px 10px #00000013;
 }
 
+.drop-sub-menu3 {
+    position: absolute;
+    left: 560px;
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 10px #00000013;
+}
+
 #option1:hover + .drop-sub-menu {
     display: flex;
 }
@@ -1899,11 +1918,19 @@ p.logo-text:hover {
     display: flex;
 }
 
+#option6:hover + .drop-sub-menu3 {
+    display: flex;
+}
+
 .drop-sub-menu:hover {
     display: flex; 
 }
 
 .drop-sub-menu2:hover {
+    display: flex; 
+}
+
+.drop-sub-menu3:hover {
     display: flex; 
 }
 
@@ -1977,4 +2004,13 @@ p.logo-text:hover {
 
 .in-use {
     background: #d1dade;
+}
+
+.mar0g-rty {
+    margin: 0 15px 0 0;
+}
+
+.desdf {
+    font-weight: 700;
+    font-size: 0.8rem;
 }

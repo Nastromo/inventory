@@ -6,30 +6,29 @@ import '../table.css';
 
 
 
-export class GroupList extends Component {
+export class Testing extends Component {
 
     initColumns = () => {
         return [
             {
-                Header: 'Ref#',
-                accessor: 'ref',
+                Header: 'Department',
+                accessor: 'dep',
             },
             {
-                Header: 'Company',
-                accessor: 'company',
+                Header: 'Role',
+                accessor: 'role',
             },
             {
-                Header: 'Title',
-                accessor: 'title',
-                width: 500
+                Header: 'User #',
+                accessor: 'user',
             },
             {
-                Header: '# In Use',
-                accessor: 'inUse',
+                Header: 'Full Name',
+                accessor: 'fullname',
             },
             {
-                Header: '# Of Lots',
-                accessor: 'ofLots',
+                Header: 'Email',
+                accessor: 'email',
             }
         ];
     }
@@ -55,21 +54,17 @@ export class GroupList extends Component {
 
     renderList = (list, text) => {
         return (
-            <div className="main-sde">
-                <div className="content-table small-t basis50">
-                    <h2>In Use</h2>
-                    <ReactTable
-                        data={list}
-                        getTdProps={this.handleRowClick}
-                        columns={this.initColumns()}
-                        resizable={false}
-                        filterable={true}
-                        defaultPageSize={17}
-                        noDataText={text}
-                    />
-                </div>
+            <div className="content-table small-t basis50">
+                <ReactTable
+                    data={list}
+                    getTdProps={this.handleRowClick}
+                    columns={this.initColumns()}
+                    resizable={false}
+                    filterable={true}
+                    defaultPageSize={17}
+                    noDataText={text}
+                />
             </div>
-
         )
     }
 
@@ -89,4 +84,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroupList)
+export default connect(mapStateToProps, mapDispatchToProps)(Testing)

@@ -15,6 +15,8 @@ import Ny from './Ny';
 import Fl from './Fl';
 import Logs from './Logs';
 import Po from './Po';
+import Reagent from './Reagent';
+import TestLogs from './TestLogs';
 
 
 
@@ -42,7 +44,11 @@ export class PrivateRoute extends Component {
                     <Route exact path="/account/items" component={Items} />
                     <Route exact path="/account/vendors" component={Vendors} />
                     <Route exact path="/account/tests" component={Tests} />
-                    <Route exact path="/account/reports" component={Reports} />
+
+                    <Route exact path="/account/purchase" component={Reports} />
+                    <Route exact path="/account/reagent" component={Reagent} />
+                    <Route exact path="/account/test-logs" component={TestLogs} />
+
                     <Route exact path="/account/users" component={Users} />
                 </Switch>
             </div>

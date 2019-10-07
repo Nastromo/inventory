@@ -6,30 +6,25 @@ import '../table.css';
 
 
 
-export class GroupList extends Component {
+export class Testing extends Component {
 
     initColumns = () => {
         return [
             {
-                Header: 'Ref#',
-                accessor: 'ref',
+                Header: 'Scan Date',
+                accessor: 'scanDate',
             },
             {
-                Header: 'Company',
-                accessor: 'company',
+                Header: 'Barcode',
+                accessor: 'barcode',
             },
             {
-                Header: 'Title',
-                accessor: 'title',
-                width: 500
+                Header: 'Item',
+                accessor: 'item',
             },
             {
-                Header: '# In Use',
-                accessor: 'inUse',
-            },
-            {
-                Header: '# Of Lots',
-                accessor: 'ofLots',
+                Header: 'Order',
+                accessor: 'order',
             }
         ];
     }
@@ -55,21 +50,17 @@ export class GroupList extends Component {
 
     renderList = (list, text) => {
         return (
-            <div className="main-sde">
-                <div className="content-table small-t basis50">
-                    <h2>In Use</h2>
-                    <ReactTable
-                        data={list}
-                        getTdProps={this.handleRowClick}
-                        columns={this.initColumns()}
-                        resizable={false}
-                        filterable={true}
-                        defaultPageSize={17}
-                        noDataText={text}
-                    />
-                </div>
+            <div className="content-table small-t basis50">
+                <ReactTable
+                    data={list}
+                    getTdProps={this.handleRowClick}
+                    columns={this.initColumns()}
+                    resizable={false}
+                    filterable={true}
+                    defaultPageSize={17}
+                    noDataText={text}
+                />
             </div>
-
         )
     }
 
@@ -89,4 +80,4 @@ const mapDispatchToProps = dispatch => ({
 
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(GroupList)
+export default connect(mapStateToProps, mapDispatchToProps)(Testing)
