@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import '../table.css';
-
+import { showPopup, renderPopup } from '../store/actions/Popup';
 
 
 
@@ -28,7 +28,7 @@ export class Testing extends Component {
     handleRowClick = (state, rowInfo, column, instance) => {
         if (rowInfo) {
             return {
-                onClick: (e, handleOriginal) => this.props.showInstrum(Number(rowInfo.index)),
+                onClick: (e, handleOriginal) => this.props.showPopup(Number(rowInfo.index)),
                 style: {
                     fontWeight: rowInfo.index === this.props.selected ? '700' : '600',
                     color: rowInfo.index === this.props.selected ? '#1ab394' : '#4e4e4e',
@@ -59,8 +59,41 @@ export class Testing extends Component {
                         noDataText={text}
                     />
                 </div>
+                {this.props.isPopup ? (
+                    <div onClick={this.closePopup} className="popup" id="shadow">
+                        <div className="back-pop" id="pop">
+                            <div className="flex titoo">
+                                <p className="tit-pop-r">Rec. Date</p>
+                                <p className="tit-pop-r">Qty</p>
+
+                            </div>
+
+                            {
+                                this.props.useList.map((item, i) => {
+                                    return (
+                                        <div className="flex rowwf" key={i}>
+                                            <p className="redf">{item.recDate}</p>
+                                            <input
+                                                id={i}
+                                                type="number"
+                                                className="row-input"
+                                                value={item.qty ? item.qty : ""} onChange={this.props.changeQty} />
+                                            <p className="redf">{item.location}</p>
+                                        </div>
+                                    )
+                                })
+                            }
+                        </div>
+                    </div>
+                ) : null}
             </div>
         )
+    }
+
+    closePopup = (e) => {
+        if (e.target.id === `shadow`) {
+            this.props.renderPopup(false);
+        }
     }
 
     render() {
@@ -71,12 +104,25 @@ export class Testing extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    list: [],
+    list: [{
+        company: `company`,
+        title: `title`,
+        qty: `qty`,
+
+    }],
     selected: state.activeTestRow,
+    isPopup: state.usePopup,
+    useList: [
+        {
+            recDate: `test`,
+            qty: 4,
+        },
+    ]
 })
 
 const mapDispatchToProps = dispatch => ({
-
+    showPopup: (i) => dispatch(showPopup(i)),
+    renderPopup: (bool) => dispatch(renderPopup(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Testing)

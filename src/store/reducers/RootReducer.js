@@ -8,11 +8,13 @@ import { newDDStatus, newDDOption } from '../reducers/NewDropDown';
 import { reps, isCreate } from '../reducers/Reps';
 import { rep } from '../reducers/Rep';
 import { actRow } from '../reducers/ActiveRow';
+import { usePopup } from '../reducers/Popup';
 
 
 
 
 const RootReducer = combineReducers({
+    usePopup,
     isCreate,
     actRow,
     rep,

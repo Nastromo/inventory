@@ -2,11 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import '../table.css';
-
+import NewDropDown from './NewDropDown';
+import { showPopupLot, renderPopup } from '../store/actions/Popup';
 
 
 
 export class Testing extends Component {
+    constructor(props) {
+        super(props);
+        this.tests = [`Lot to Lot`, `MICQC`, `N/A`];
+        this.resus = [`option1`];
+    }
 
     initColumns = () => {
         return [
@@ -45,7 +51,7 @@ export class Testing extends Component {
     handleRowClick = (state, rowInfo, column, instance) => {
         if (rowInfo) {
             return {
-                onClick: (e, handleOriginal) => this.props.showInstrum(Number(rowInfo.index)),
+                onClick: (e, handleOriginal) => this.props.showPopup(Number(rowInfo.index)),
                 style: {
                     fontWeight: rowInfo.index === this.props.selected ? '700' : '600',
                     color: rowInfo.index === this.props.selected ? '#1ab394' : '#4e4e4e',
@@ -76,9 +82,65 @@ export class Testing extends Component {
                         noDataText={text}
                     />
                 </div>
+                {this.props.isPopup ? (
+                    <div onClick={this.closePopup} className="popup" id="shadow">
+                        <div className="back-pop flex al-cntr" id="pop">
+
+                            <p className="derts">{`In Service Date: `} <span className="terf">
+                                {this.props.lot.servDate} asdf</span></p>
+
+
+                            <p className="derts">{`Test Date: `} <span className="terf">
+                                {this.props.lot.testDate} asdf</span></p>
+
+
+                            <div className="flex bas22 al-cntr">
+                                <p className="derts">Test Method:</p>
+                                <NewDropDown
+                                    id="test"
+                                    actionType="SET_TEST_OPTION"
+                                    height="30px"
+                                    status={this.props.isOpenTes}
+                                    menu={this.tests}
+                                    option={this.props.lot.optionLot} />
+                            </div>
+
+
+                            <div className="flex bas22 al-cntr">
+                                <p className="derts">Test Result:</p>
+                                <NewDropDown
+                                    id="resu"
+                                    actionType="SET_RES_OPTION"
+                                    height="30px"
+                                    status={this.props.isOpenRes}
+                                    menu={this.resus}
+                                    option={this.props.lot.optionRes} />
+                            </div>
+
+
+                            <div className="flex bas22 al-cntr">
+                                <p className="derts">Location:</p>
+                                <input
+                                    type="number"
+                                    className="row-input hdfgr"
+                                    value={this.props.lot.loc ? this.props.lot.loc : ""} onChange={this.props.changeLoc} />
+                            </div>
+
+                            <div className="green-btn hfger">SAVE</div>
+
+                        </div>
+                    </div>
+                ) : null}
             </div>
 
+
         )
+    }
+
+    closePopup = (e) => {
+        if (e.target.id === `shadow`) {
+            this.props.renderPopup(false);
+        }
     }
 
     render() {
@@ -89,12 +151,20 @@ export class Testing extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    list: [],
+    list: [{
+        recDate: `recDate`,
+        lot: `lot`,
+    }],
     selected: state.activeTestRow,
+    isPopup: state.usePopup,
+    lot: {
+
+    },
 })
 
 const mapDispatchToProps = dispatch => ({
-
+    showPopup: (i) => dispatch(showPopupLot(i)),
+    renderPopup: (bool) => dispatch(renderPopup(bool)),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Testing)
