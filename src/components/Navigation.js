@@ -20,6 +20,9 @@ export class Navigation extends Component {
             case `/account/groups`:
                 this.setActive(this.processing);
                 break;
+            case `/account/efunc`:
+                this.setActive(this.option8);
+                break;
             default: break;
         }
     }
@@ -47,6 +50,9 @@ export class Navigation extends Component {
             case `option7`:
                 this.setActive(this.users);
                 break;
+            case `option8`:
+                this.setActive(this.option8);
+                break;
             default: break;
         }
     }
@@ -62,6 +68,12 @@ export class Navigation extends Component {
                     <div className="main-categories">
                         <p className="logo-text">Inventory</p>
                         <Link
+                            id="option8"
+                            onClick={this.handleClick}
+                            innerRef={el => this.option8 = el}
+                            className="menu-active"
+                            to="/account/efunc">E-func</Link>
+                        {/* <Link
                             id="option1"
                             onClick={this.handleClick}
                             innerRef={el => this.pending = el}
@@ -112,7 +124,7 @@ export class Navigation extends Component {
                             id="option7"
                             onClick={this.handleClick}
                             innerRef={el => this.users = el}
-                            to="/account/users">Users</Link>
+                            to="/account/users">Users</Link> */}
                     </div>
 
                     <div className="work-info">

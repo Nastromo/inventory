@@ -2134,3 +2134,83 @@ p.logo-text:hover {
     max-width: 900px;
 }
 
+.main-div {
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid #dadada;
+    background: #fff;
+}
+
+.bas30 {
+    flex-basis: 30%;
+}
+
+.fdfe {
+    flex-basis: 70%;
+    margin: 0 0 0 15px;
+}
+
+.sec-dov {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dadada;
+}
+
+.dfdfS {
+    margin: 15px 0 0 0;
+}
+
+.adhgy {
+    font-weight: 700;
+    font-size: 0.8rem;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    padding: 3px 10px;
+    cursor: pointer;
+}
+
+.actgg {
+    color: #12a588;
+    border: 1px solid #dadada;
+    border-bottom: 1px solid #fff;
+    background: #fff;
+    z-index: 400;
+}
+
+.dcvfg {
+    margin: -1px 0 0 0;
+}
+
+.grn-btn {
+    background: #2fbda0;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 120px;
+    height: 30px;
+}
+
+.blue-btn {
+    background: #4c94d8;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    cursor: pointer;
+    width: 150px;
+    height: 30px;
+    margin: 0 15px 0 0;
+}
+
+.asddd {
+    margin: 15px 0 0 0;
+}
+

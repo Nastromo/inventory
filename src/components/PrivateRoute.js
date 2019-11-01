@@ -3,20 +3,21 @@ import { connect } from 'react-redux';
 import { Route, Switch, withRouter } from 'react-router-dom';
 import LineSpinner from './LineSpinner';
 import Navigation from './Navigation';
-import Main from './Main';
-import Order from './Order';
-import Items from './Items';
-import Vendors from './Vendors';
-import Tests from './Tests';
-import Reports from './Reports';
-import Users from './Users';
-import Testing from './Testing';
-import Ny from './Ny';
-import Fl from './Fl';
-import Logs from './Logs';
-import Po from './Po';
-import Reagent from './Reagent';
-import TestLogs from './TestLogs';
+import Efunc from './Efunc';
+// import Main from './Main';
+// import Order from './Order';
+// import Items from './Items';
+// import Vendors from './Vendors';
+// import Tests from './Tests';
+// import Reports from './Reports';
+// import Users from './Users';
+// import Testing from './Testing';
+// import Ny from './Ny';
+// import Fl from './Fl';
+// import Logs from './Logs';
+// import Po from './Po';
+// import Reagent from './Reagent';
+// import TestLogs from './TestLogs';
 
 
 
@@ -32,7 +33,7 @@ export class PrivateRoute extends Component {
             <div>
                 <Navigation />
                 <Switch>
-                    <Route exact path="/account/in-use" component={Main} />
+                    {/* <Route exact path="/account/in-use" component={Main} />
                     <Route exact path="/account/lab" component={Testing} />
                     <Route exact path="/account/inventory-ny" component={Ny} />
                     <Route exact path="/account/inventory-fl" component={Fl} />
@@ -49,7 +50,8 @@ export class PrivateRoute extends Component {
                     <Route exact path="/account/reagent" component={Reagent} />
                     <Route exact path="/account/test-logs" component={TestLogs} />
 
-                    <Route exact path="/account/users" component={Users} />
+                    <Route exact path="/account/users" component={Users} /> */}
+                    <Route exact path="/account/efunc" component={Efunc} />
                 </Switch>
             </div>
         )
