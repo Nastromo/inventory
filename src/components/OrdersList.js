@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ReactTable from "react-table";
 import '../table.css';
-
+import { getPayments, showClientData } from '../store/actions/EPayments';
 
 
 
 export class OrdersList extends Component {
+    componentDidMount() {
+        this.props.getPayments();
+    }
 
     initColumns = () => {
         return [
             {
-                Header: 'Client Name',
+                Header: 'Name',
                 accessor: 'clientName',
             },
             {
@@ -24,7 +27,7 @@ export class OrdersList extends Component {
     handleRowClick = (state, rowInfo, column, instance) => {
         if (rowInfo) {
             return {
-                onClick: (e, handleOriginal) => this.props.showInstrum(Number(rowInfo.index)),
+                onClick: (e, handleOriginal) => this.props.showClientData(Number(rowInfo.index)),
                 style: {
                     fontWeight: rowInfo.index === this.props.selected ? '700' : '600',
                     color: rowInfo.index === this.props.selected ? '#1ab394' : '#4e4e4e',
@@ -65,12 +68,13 @@ export class OrdersList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    list: [],
-    selected: state.activeTestRow,
+    selected: state.paymentSelected,
+    list: state.epayments,
 })
 
 const mapDispatchToProps = dispatch => ({
-
+    showClientData: (index) => dispatch(showClientData(index)),
+    getPayments: () => dispatch(getPayments())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(OrdersList)

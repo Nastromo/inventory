@@ -16,7 +16,7 @@ export class KitsList extends Component {
             },
             {
                 Header: 'Barcode',
-                accessor: 'barcode',
+                accessor: 'barCode',
             },
         ];
     }
@@ -64,8 +64,8 @@ export class KitsList extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    list: [],
     selected: state.activeTestRow,
+    list: state.kits.list
 })
 
 const mapDispatchToProps = dispatch => ({

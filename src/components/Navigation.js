@@ -71,8 +71,9 @@ export class Navigation extends Component {
                             id="option8"
                             onClick={this.handleClick}
                             innerRef={el => this.option8 = el}
-                            className="menu-active"
+                            className="menu-active relative"
                             to="/account/efunc">E-func</Link>
+                            <p className={this.props.new ? "show-count" : "show-count sh-hide"}>{this.props.new}</p>
                         {/* <Link
                             id="option1"
                             onClick={this.handleClick}
@@ -137,7 +138,7 @@ export class Navigation extends Component {
 }
 
 const mapStateToProps = (state) => ({
-
+    new: state.notPrinted,
 
 })
 
