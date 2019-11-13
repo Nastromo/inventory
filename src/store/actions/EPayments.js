@@ -68,6 +68,7 @@ export const printBarcodes = () => {
             for (let i = 0; i < res.data.length; i++) {
                 if (!res.data[i].isPrinted) count++;
             }
+            dispatch(setPayments(res.data));
             dispatch(setNotPrinted(count));
             dispatch(showNotification(`Printed...`, `notification-show notification-green`));
         } catch (err) {
