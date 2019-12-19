@@ -63,7 +63,8 @@ export const printBarcodes = () => {
         try {
             const i = getState().paymentSelected;
             const payment = getState().epayments[i];
-            const res = await API.post(`/v1/e-payments?id=${payment.id}`);
+            const list = getState().kits.list;
+            const res = await API.post(`/v1/e-payments?`, {id: payment.id, list});
             let count = 0;
             for (let i = 0; i < res.data.length; i++) {
                 if (!res.data[i].isPrinted) count++;
