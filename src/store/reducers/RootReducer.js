@@ -10,11 +10,13 @@ import { rep } from '../reducers/Rep';
 import { actRow } from '../reducers/ActiveRow';
 import { usePopup } from '../reducers/Popup';
 import { epayments, eclient, paymentSelected, kits, notPrinted } from '../reducers/EPayments';
+import { patient } from '../reducers/Printed';
 
 
 
 
 const RootReducer = combineReducers({
+    patient,
     notPrinted,
     kits,
     paymentSelected,

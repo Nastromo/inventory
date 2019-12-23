@@ -4,6 +4,8 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import LineSpinner from './LineSpinner';
 import Navigation from './Navigation';
 import Efunc from './Efunc';
+import Printed from './Printed';
+
 // import Main from './Main';
 // import Order from './Order';
 // import Items from './Items';
@@ -52,6 +54,7 @@ export class PrivateRoute extends Component {
 
                     <Route exact path="/account/users" component={Users} /> */}
                     <Route exact path="/account/efunc" component={Efunc} />
+                    <Route exact path="/account/printed" component={Printed} />
                 </Switch>
             </div>
         )

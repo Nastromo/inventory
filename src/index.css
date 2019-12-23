@@ -2215,7 +2215,7 @@ p.logo-text:hover {
 
 .show-count {
     position: absolute;
-    right: 2px;
+    left: 201px;
     top: 13px;
     display: flex;
     justify-content: center;
@@ -2231,5 +2231,21 @@ p.logo-text:hover {
 
 .sh-hide {
     display: none;
+}
+
+.ffnj {
+    margin: 0 0 0 20px;
+}
+
+.ffnj .flex p:first-child {
+    font-size: 0.82rem;
+    font-weight: 700;
+}
+
+.ffnj .flex {
+    width: 350px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 8px 0 0 0;
 }
 

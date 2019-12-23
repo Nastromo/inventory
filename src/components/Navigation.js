@@ -74,6 +74,11 @@ export class Navigation extends Component {
                             className="menu-active relative"
                             to="/account/efunc">E-func</Link>
                             <p className={this.props.new ? "show-count" : "show-count sh-hide"}>{this.props.new}</p>
+                            <Link
+                            id="option1"
+                            onClick={this.handleClick}
+                            innerRef={el => this.pending = el}
+                            to="/account/printed">History</Link>
                         {/* <Link
                             id="option1"
                             onClick={this.handleClick}

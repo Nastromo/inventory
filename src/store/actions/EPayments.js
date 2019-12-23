@@ -13,6 +13,19 @@ export const setNotPrinted = (count) => ({
     count
 });
 
+
+export const getPrintedPayments = () => {
+    return async (dispatch, getState) => {
+        try {
+            const res = await API.get(`/v1/e-print-payments`);
+            dispatch(setPayments(res.data));
+            dispatch(showClientData(0));
+        } catch (err) {
+            console.log(err);
+        }
+    }
+}
+
 export const getPayments = () => {
     return async (dispatch, getState) => {
         try {
